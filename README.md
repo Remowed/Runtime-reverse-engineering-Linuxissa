@@ -1,13 +1,17 @@
 # Runtime-reverse-engineering-Linuxissa 
 
-- In Progress...
-
 A small project demonstrating how to use Frida to dynamically
 instrument a Linux binary and observe password checks at runtime.
 
 This project shows how runtime reverse engineering techniques can be used
 to understand program behavior without modifying or recompiling the binary,
 by hooking standard C library functions such as scanf, strcmp, and puts.
+
+## Security implications
+
+This project demonstrates why hardcoded secrets and client-side
+string comparisons are insecure, as runtime instrumentation can
+extract or bypass authentication logic without modifying binaries.
 
 ## How to run
 
@@ -53,3 +57,13 @@ Runtime-reverse-engineering-Linuxissa/
 - Frida (>= 17.x)
 - frida-tools
 - gcc
+
+
+## Things I want to do next
+
+After doing this project I would love to learn how to change program logic at runtime. Right now I am basically observing it.
+I have few ideas like making strcmp always return 0 and make the program print "OK" no matter the password.
+
+
+
+
